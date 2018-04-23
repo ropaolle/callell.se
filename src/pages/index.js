@@ -29,8 +29,8 @@ const BlogIndex = props => {
         )
       })}
     </div>
-  ) 
-} 
+  )
+}
 
 export default BlogIndex
 
