@@ -1,18 +1,42 @@
-import React from 'react' /* eslint-disable-line */
+import React from "react"; /* eslint-disable-line */
+import styled from "styled-components";
 import Link from 'gatsby-link'
-import get from 'lodash/get'
 import Helmet from 'react-helmet' /* eslint-disable-line */
+import get from 'lodash/get'
 
 import Bio from '../components/Bio'
+import UserCard from '../components/UserCard'
+
+const Container = styled.div`
+  margin: 3rem auto;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 const BlogIndex = props => {
   const siteTitle = get(props, 'data.site.siteMetadata.title')
   const posts = get(props, 'data.allMarkdownRemark.edges')
 
   return (
-    <div>
+    <Container>
       <Helmet title={siteTitle} />
       <Bio />
+
+      <h1>About Styled Components</h1>
+      <p>Styled Components is cool</p>
+      <UserCard
+        username="Jane Doe"
+        avatar="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg"
+        excerpt="I'm Jane Doe. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      />
+      <UserCard
+        username="Bob Smith"
+        avatar="https://s3.amazonaws.com/uifaces/faces/twitter/vladarbatov/128.jpg"
+        excerpt="I'm Bob smith, a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      />
       {posts.map(({ node }) => {
         const title = get(node, 'frontmatter.title') || node.fields.slug
         return (
@@ -28,8 +52,8 @@ const BlogIndex = props => {
           </div>
         )
       })}
-    </div>
-  )
+    </Container>
+)
 }
 
 export default BlogIndex

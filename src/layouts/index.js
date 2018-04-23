@@ -1,34 +1,16 @@
 import React from 'react' /* eslint-disable-line */
-import Link from 'gatsby-link'
+// import Link from 'gatsby-link'
+import Header from './header';
 
 const Template = props => {
-  const { location, children } = props
-  let header
-  if (location.pathname === '/') {
-    header = (
-      <h1>
-        <Link to="/">Callell1.se</Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <h3>
-        <Link to="/">Callell.se</Link>
-      </h3>
-    )
-  }
+  const { children } = props
+
   return (
     <div>
-      {header}
+      <Header location="location" />
       {children()}
     </div>
   )
 }
-
-// Template.propTypes = {
-//   children: React.PropTypes.func,
-//   location: React.PropTypes.object,
-//   route: React.PropTypes.object,
-// }
 
 export default Template
