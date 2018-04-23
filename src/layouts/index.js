@@ -7,7 +7,7 @@ const Template = props => {
   if (location.pathname === '/') {
     header = (
       <h1>
-        <Link to="/">Callell.se</Link>
+        <Link to="/">Callell1.se</Link>
       </h1>
     )
   } else {

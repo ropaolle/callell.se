@@ -41,6 +41,18 @@ module.exports = {
         // trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Callell.se",
+        short_name: "Callell",
+        start_url: "/",
+        background_color: "#f7f0eb",
+        theme_color: "#a2466c",
+        display: "minimal-ui",
+        icon: "src/logo.png", // This path is relative to the root of the site.
+      },
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
   ],
