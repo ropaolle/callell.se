@@ -3,6 +3,8 @@ title: Test
 date: "2015-01-28"
 ---
 
+Text som beskriver detta objekt.
+
 ```javascript
 let obj = {
   a: 1,

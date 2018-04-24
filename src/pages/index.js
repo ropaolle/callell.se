@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet' /* eslint-disable-line */
 import get from 'lodash/get'
 
-import Bio from '../components/Bio'
+// import Bio from '../components/Bio'
 import UserCard from '../components/UserCard'
 
 const Container = styled.div`
@@ -23,7 +23,7 @@ const BlogIndex = props => {
   return (
     <Container>
       <Helmet title={siteTitle} />
-      <Bio />
+      {/* <Bio /> */}
 
       <h1>About Styled Components</h1>
       <p>Styled Components is cool</p>
