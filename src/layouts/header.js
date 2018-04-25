@@ -17,6 +17,7 @@ const Container = styled.header`
   background: url(./header.svg) no-repeat center center;
   min-height: 20rem;
   background-size: cover;
+  width: 100%;
 `
 const Element = styled.div`
   flex: ${props => props.fullWidth ? '1' : 'initial'};

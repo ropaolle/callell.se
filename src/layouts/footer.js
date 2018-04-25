@@ -47,6 +47,7 @@ const FooterSecond = FooterBottom.extend`
   background: url(./footer.svg) no-repeat center center;
   background-size: cover;
   min-height: 20rem;
+  width: 100%;
 `;
 
 const Element = styled.div`
