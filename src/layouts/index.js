@@ -24,15 +24,11 @@ const Section = styled.section`
 
 const Template = props => {
   const { children, location } = props
-  console.log('P', props)
+
   return (
     <Page>
       <Header path={location.pathname} />
-      <Section>
-        <h1>JavaScript och Webbutveckling</h1>
-
-      </Section>
-      {/* <Section>{children()}</Section> */}
+      <Section>{children()}</Section>
       <Footer path={location.pathname} />
     </Page>
   )
