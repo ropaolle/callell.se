@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Link from 'gatsby-link'
 
 import logo from './logo.png'
-import svg from './svg.svg'
 
 const FooterBottom = styled.footer`
   color: #eee;
