@@ -9,6 +9,7 @@ module.exports = {
   "globals": {
     "graphql": false,
   },
+  "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -21,6 +22,7 @@ module.exports = {
     "react/prop-types": 0,
     "react/forbid-prop-types": 0,
     "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/label-has-for": 0,
     "react/jsx-filename-extension": [
       1,
       {
