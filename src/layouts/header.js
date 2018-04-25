@@ -13,7 +13,9 @@ const Container = styled.header`
   /* flex-direction: row */
   justify-content: space-between;
   align-items: center;
-  background-image: url(${headerImage});
+  /* background-image: url(${headerImage}); */
+  background: url(./header.svg) no-repeat center center;
+  min-height: 20rem;
   background-size: cover;
 `
 const Element = styled.div`

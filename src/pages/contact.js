@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"; /* eslint-disable-line */
 import { navigateTo } from "gatsby-link";
 
 function encode(data) {
   return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
       .join("&");
 }
 
@@ -23,8 +23,8 @@ export default class Contact extends React.Component {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state })
     })
-      .then(() => navigateTo('/thanks/'))
-      .catch(error => alert(error));
+    .then(() => navigateTo('/thanks/'))
+    .catch(error => alert(error));
 
     e.preventDefault();
   };
@@ -49,19 +49,19 @@ export default class Contact extends React.Component {
           <p>
             <label>
               Your name:<br />
-            <input type="text" name="name" onChange={this.handleChange}/>
+              <input type="text" name="name" onChange={this.handleChange} />
             </label>
           </p>
           <p>
             <label>
               Your email:<br />
-              <input type="email" name="email" onChange={this.handleChange}/>
+              <input type="email" name="email" onChange={this.handleChange} />
             </label>
           </p>
           <p>
             <label>
               Message:<br />
-              <textarea name="message" onChange={this.handleChange}/>
+              <textarea name="message" onChange={this.handleChange} />
             </label>
           </p>
           <p>

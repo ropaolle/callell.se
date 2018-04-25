@@ -1,39 +1,81 @@
 import React from 'react' /* eslint-disable-line */
 import styled from "styled-components";
+import Link from 'gatsby-link'
 
-import logo from '../layouts/logo.png'
+import logo from './logo.png'
+import svg from './svg.svg'
 
-const Container = styled.footer`
-  color: ${props => props.light ? '#333' : '#eee'};
-  background-color: ${props => props.light ? '#ccc' : '#454545'};
+const FooterBottom = styled.footer`
+  color: #eee;
+  background-color: #454545;
 
   padding: 1.45rem;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   align-items: center;
 
   img {
     max-height: 2rem;
     margin-bottom: 0;
   }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0.5rem 0;
+  }
+
+  li {
+    margin: 0;
+    padding: 0 0.5rem;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #ddd;
+  }
 `;
 
-// const LightContainer = Container.attrs({ color: '#eee' });
+const FooterSecond = FooterBottom.extend`
+  color: #333;
+  background-color: #ccc;
+  flex-direction: row;
+  background: url(./footer.svg) no-repeat center center;
+  background-size: cover;
+  min-height: 20rem;
+`;
 
 const Element = styled.div`
-  /* color: #ee0; */
+  color: #777;
+`;
+
+const Copyright= styled.div`
+  color: #ccc;
+  font-size: 0.8em;
 `;
 
 const Footer = () => (
   <div>
-    <Container>
-      <Element>Callell.se <span role="img" aria-label="copyrigth">©</span> 2018</Element>
-      <Element><img src={logo} alt="Callell.se" /></Element>
-    </Container>
-    <Container light>
-      <Element>Callell.se <span role="img" aria-label="copyrigth">©</span> 2018</Element>
-      <Element><img src={logo} alt="Callell.se" /></Element>
-    </Container>
+    <FooterSecond>
+      <Element>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Element>
+    </FooterSecond>
+    <FooterBottom>
+      <div><img src={logo} alt="Callell.se" /></div>
+      <div>
+        <ul>
+          <li><Link to="hem">Hem</Link></li>
+          <li><Link to="kontakt">Kontakt</Link></li>
+          <li><Link to="blogg">Blogg</Link></li>
+        </ul>
+      </div>
+      <Copyright>Callell.se <span role="img" aria-label="copyrigth">©</span> 2018</Copyright>
+
+    </FooterBottom>
   </div>
   )
 

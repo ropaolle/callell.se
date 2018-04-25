@@ -6,31 +6,25 @@ import Footer from './footer'
 
 import './index.css'
 
-const Page = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  height: 100%; */
-`
-
 const Section = styled.section`
   background-color: #fafafa;
   display: flex;
-  /* flex-direction: row; */
-  /* align-items: center; */
-  /* justify-content: center; */
   padding: 1.45rem;
+
+  @media (min-width: 600px) {
+    padding: 0;
+  }
 `
 
 const Template = props => {
   const { children, location } = props
 
   return (
-    <Page>
+    <div id="page">
       <Header path={location.pathname} />
       <Section>{children()}</Section>
       <Footer path={location.pathname} />
-    </Page>
+    </div>
   )
 }
 
