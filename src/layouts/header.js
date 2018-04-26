@@ -1,12 +1,11 @@
 import React from 'react' /* eslint-disable-line */
-import Link from 'gatsby-link'
 import styled from 'styled-components'
+import Menu from '../components/Menu'
 
-import logo from '../layouts/logo.svg'
+import logo from '../layouts/logo-text.svg'
 import header from './header.svg'
 
 const Container = styled.header`
-  font-size: ${props => props.path ? '2rem' : '1rem'};
   padding: 1.45rem;
   max-width: 60rem;
   margin: 0 auto;
@@ -14,36 +13,6 @@ const Container = styled.header`
   justify-content: space-between;
   align-items: center;
 `
-const Menu = styled.div`
-  flex: 1;
-  z-index: 1;
-
-  ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0.5rem 0;
-    justify-content: flex-end;
-  }
-
-  li {
-    margin: 0 1rem;
-    padding: 0 0.5rem 0.7rem 0;
-  }
-
-  a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.45rem;
-  }
-
-  a:hover {
-    color: #ddd;
-  }
-
-  @media (max-width: 600px) {
-    display: none;
-  }
-`;
 
 const Logo = styled.div`
   z-index: 1;
@@ -91,13 +60,7 @@ const Header = props => (
     <Logo>
       <img src={logo} alt="Callell.se" />
     </Logo>
-    <Menu>
-      <ul>
-        <li><Link to="hem">Hem</Link></li>
-        <li><Link to="kontakt">Kontakt</Link></li>
-        <li><Link to="blogg">Blogg</Link></li>
-      </ul>
-    </Menu>
+    <Menu header />
     <HamburgerMenu>
       <span>
         <div />

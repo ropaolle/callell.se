@@ -12,12 +12,12 @@ const Section = styled.section`
   max-width: 60rem;
   margin: 0 auto;
   min-height: 30rem;
+
   & > div { z-index: 1; }
+
   @media (min-width: 60rem) {
     padding: 0;
   }
-  /* DEBUG: */
-  /* background-color: #eef; */
 `
 
 const Template = props => {
