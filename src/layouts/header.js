@@ -2,67 +2,113 @@ import React from 'react' /* eslint-disable-line */
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 
-import logo from '../layouts/logo.png'
-import headerImage from '../layouts/header.jpg'
+import logo from '../layouts/logo.svg'
+import header from './header.svg'
 
 const Container = styled.header`
   font-size: ${props => props.path ? '2rem' : '1rem'};
   padding: 1.45rem;
-  background-color: #f3f3f3;
+  max-width: 60rem;
+  margin: 0 auto;
   display: flex;
-  /* flex-direction: row */
   justify-content: space-between;
   align-items: center;
-  /* background-image: url(${headerImage}); */
-  background: url(./header.svg) no-repeat center center;
-  min-height: 20rem;
-  background-size: cover;
-  width: 100%;
 `
-const Element = styled.div`
-  flex: ${props => props.fullWidth ? '1' : 'initial'};
-  img {
-    max-height: 2rem;
-    margin-bottom: 0;
+const Menu = styled.div`
+  flex: 1;
+  z-index: 1;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0.5rem 0;
+    justify-content: flex-end;
+  }
+
+  li {
+    margin: 0 1rem;
+    padding: 0 0.5rem 0.7rem 0;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.45rem;
+  }
+
+  a:hover {
+    color: #ddd;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
   }
 `;
 
-const StyledLink = styled(Link)`
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-  margin-left: 0.5rem;
+const Logo = styled.div`
+  z-index: 1;
+  width: 200px;
+  height: auto;
 `;
 
-const Bar = styled.div`
-  width: 35px;
-  height: 6px;
-  background-color: #222;
-  margin: 6px 0;
-  border-radius: 3px;
+const HamburgerMenu = styled.div`
+  z-index: 1;
+
+  div {
+    width: 35px;
+    height: 6px;
+    background-color: #f7f7f7;
+    margin: 6px 0;
+    border-radius: 3px;
+  }
+
+  &:hover div{
+    background-color: #ddd;
+  }
+
+  @media (min-width: 600px) {
+    display: none;
+  }
 `;
 
-const Header = props => {
-  const { path } = props
-console.log('P', props)
-  return (
-    <Container path={path === '/'}>
-      <Element>
-        <Link to="/"><img src={logo} alt="Callell.se" /></Link>
-      </Element>
-      <Element>
-        <StyledLink to="/">Callell.se</StyledLink>
-      </Element>
-      <Element fullWidth />
-      <Element>
-        <span>
-          <Bar />
-          <Bar />
-          <Bar />
-        </span>
-      </Element>
-    </Container>
+const HeaderImage = styled.div`
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+
+  @media (max-width: 600px) {
+    img {
+      height: 175px;
+      width: auto;
+    }
+  }
+`;
+
+const Header = props => (
+  <Container path={props.path === '/'}>
+    <Logo>
+      <img src={logo} alt="Callell.se" />
+    </Logo>
+    <Menu>
+      <ul>
+        <li><Link to="hem">Hem</Link></li>
+        <li><Link to="kontakt">Kontakt</Link></li>
+        <li><Link to="blogg">Blogg</Link></li>
+      </ul>
+    </Menu>
+    <HamburgerMenu>
+      <span>
+        <div />
+        <div />
+        <div />
+      </span>
+    </HamburgerMenu>
+    <HeaderImage>
+      <img src={header} alt="Callell.se" />
+    </HeaderImage>
+  </Container>
   )
-}
 
 export default Header

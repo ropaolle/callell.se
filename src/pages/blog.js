@@ -8,12 +8,12 @@ import get from 'lodash/get'
 import UserCard from '../components/UserCard'
 
 const Container = styled.div`
-  margin: 3rem auto;
+  /* margin: 3rem auto;
   max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 `;
 
 const BlogIndex = props => {

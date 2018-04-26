@@ -2,7 +2,8 @@ import React from 'react' /* eslint-disable-line */
 import styled from "styled-components";
 import Link from 'gatsby-link'
 
-import logo from './logo.png'
+import logo from './logo.svg'
+import footer from './footer.svg'
 
 const FooterBottom = styled.footer`
   color: #eee;
@@ -23,6 +24,7 @@ const FooterBottom = styled.footer`
     display: flex;
     list-style-type: none;
     margin: 0.5rem 0;
+    padding: 0;
   }
 
   li {
@@ -40,18 +42,37 @@ const FooterBottom = styled.footer`
   }
 `;
 
-const FooterSecond = FooterBottom.extend`
-  color: #333;
-  background-color: #ccc;
-  flex-direction: row;
-  background: url(./footer.svg) no-repeat center center;
-  background-size: cover;
-  min-height: 20rem;
+const FooterSecond = styled.footer`
+  position: relative;
   width: 100%;
+  line-height: 0;
+  img {
+    margin: 0;
+  }
 `;
 
 const Element = styled.div`
+  position: absolute;
+  top: 33%;
+  left: 1.45rem;
+  max-width: 50%;
+  margin: 0;
+  line-height: 1.45em;
+  font-size: 1.45rem;
   color: #777;
+
+  @media (max-width: 60rem) {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 30rem) {
+    font-size: 1.0rem;
+  }
+`;
+
+const Logo = styled.div`
+  width: 200px;
+  height: auto;
 `;
 
 const Copyright= styled.div`
@@ -62,10 +83,11 @@ const Copyright= styled.div`
 const Footer = () => (
   <div>
     <FooterSecond>
-      <Element>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Element>
+      <img src={footer} alt="Callell.se" />
+      <Element>First we build the tools, then they build us...</Element>
     </FooterSecond>
     <FooterBottom>
-      <div><img src={logo} alt="Callell.se" /></div>
+      <Logo><img src={logo} alt="Callell.se" /></Logo>
       <div>
         <ul>
           <li><Link to="hem">Hem</Link></li>
@@ -74,7 +96,6 @@ const Footer = () => (
         </ul>
       </div>
       <Copyright>Callell.se <span role="img" aria-label="copyrigth">©</span> 2018</Copyright>
-
     </FooterBottom>
   </div>
   )

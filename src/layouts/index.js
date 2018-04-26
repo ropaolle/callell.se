@@ -4,16 +4,20 @@ import styled from 'styled-components'
 import Header from './header'
 import Footer from './footer'
 
-import './index.css'
+import './normalize.css'
 
 const Section = styled.section`
-  background-color: #fafafa;
   display: flex;
   padding: 1.45rem;
-
-  @media (min-width: 600px) {
+  max-width: 60rem;
+  margin: 0 auto;
+  min-height: 30rem;
+  & > div { z-index: 1; }
+  @media (min-width: 60rem) {
     padding: 0;
   }
+  /* DEBUG: */
+  /* background-color: #eef; */
 `
 
 const Template = props => {
