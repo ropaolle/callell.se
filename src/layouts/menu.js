@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Menu = (props) => {
   let StyledMenu = styled.div`
-    z-index: 1;
+    z-index: 2;
 
     ul {
       display: flex;
@@ -28,7 +28,6 @@ const Menu = (props) => {
   if (props.header) {
     StyledMenu = StyledMenu.extend`
       font-size: 1.45rem;
-      padding-bottom: 15px;
 
       @media (max-width: 600px) {
         display: none;

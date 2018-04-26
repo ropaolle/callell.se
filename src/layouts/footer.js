@@ -1,9 +1,9 @@
 import React from 'react' /* eslint-disable-line */
 import styled from "styled-components";
-import Menu from '../components/Menu'
+import Menu from './menu'
 
-import logo from './logo-text.svg'
-import footer from './footer.svg'
+import logo from './img/logo-text.svg'
+import footer from './img/footer.svg'
 
 const FooterBottom = styled.footer`
   color: #eee;
@@ -17,6 +17,7 @@ const FooterBottom = styled.footer`
 
 const FooterSecond = styled.footer`
   position: relative;
+  background-color: #fff;
   width: 100%;
   line-height: 0;
   img {

@@ -1,0 +1,13 @@
+/* From Netifly */
+html {
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+  background-color: #3FA9F5;
+  z-index: 0;
+}
+
+.btn {
+  text-decoration: none;
+}

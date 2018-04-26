@@ -1,9 +1,9 @@
 import React from 'react' /* eslint-disable-line */
 import styled from 'styled-components'
-import Menu from '../components/Menu'
+import Link from 'gatsby-link'
+import Menu from './menu'
 
-import logo from '../layouts/logo-text.svg'
-import header from './header.svg'
+import logo from './img/logo-text.svg'
 
 const Container = styled.header`
   padding: 1.45rem;
@@ -14,14 +14,31 @@ const Container = styled.header`
   align-items: center;
 `
 
+/*
+background-color: #3FA9F5;
+    height: 100%;
+*/
+const BottomBorder = styled.div`
+  padding: 0 1.45rem;
+  display: flex;
+  margin: -1.9rem auto 1.9rem auto;
+  max-width: 60rem;
+  height: 0;
+  hr {
+    z-index: 2;
+    border: 1px solid #4EB5F4;
+    width: 100%;
+  }
+`
+
 const Logo = styled.div`
-  z-index: 1;
+  z-index: 2;
   width: 200px;
   height: auto;
 `;
 
 const HamburgerMenu = styled.div`
-  z-index: 1;
+  z-index: 2;
 
   div {
     width: 35px;
@@ -40,38 +57,27 @@ const HamburgerMenu = styled.div`
   }
 `;
 
-const HeaderImage = styled.div`
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  overflow: hidden;
-
-  @media (max-width: 600px) {
-    img {
-      height: 175px;
-      width: auto;
-    }
-  }
-`;
-
 const Header = props => (
-  <Container path={props.path === '/'}>
-    <Logo>
-      <img src={logo} alt="Callell.se" />
-    </Logo>
-    <Menu header />
-    <HamburgerMenu>
-      <span>
-        <div />
-        <div />
-        <div />
-      </span>
-    </HamburgerMenu>
-    <HeaderImage>
-      <img src={header} alt="Callell.se" />
-    </HeaderImage>
-  </Container>
+  <div>
+    <Container path={props.path === '/'}>
+      <Logo>
+        <Link to="/">
+          <img src={logo} alt="Callell.se" />
+        </Link>
+      </Logo>
+      <Menu header />
+      <HamburgerMenu>
+        <span>
+          <div />
+          <div />
+          <div />
+        </span>
+      </HamburgerMenu>
+    </Container>
+    <BottomBorder>
+      <hr />
+    </BottomBorder>
+  </div>
   )
 
 export default Header

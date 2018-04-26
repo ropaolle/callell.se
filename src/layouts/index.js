@@ -4,18 +4,21 @@ import styled from 'styled-components'
 import Header from './header'
 import Footer from './footer'
 
-import './normalize.css'
+import './css/normalize.css'
+import './css/buttons.css'
+import './css/overrides.css'
 
 const Section = styled.section`
   display: flex;
-  padding: 1.45rem;
+  padding: 0 1.45rem;
   max-width: 60rem;
   margin: 0 auto;
   min-height: 30rem;
+  background-color: #fff;
 
   & > div { z-index: 1; }
 
-  @media (min-width: 60rem) {
+  @media (min-width: 62.9rem) {
     padding: 0;
   }
 `
