@@ -48,9 +48,9 @@ module.exports = {
         short_name: "Callell",
         start_url: "/",
         background_color: "#f7f0eb",
-        theme_color: "#a2466c",
-        display: "minimal-ui",
-        icon: "static/logo.svg", // This path is relative to the root of the site.
+        theme_color: "#3FA9F5",
+        display: "standalone",
+        icon: "src/logo.png", // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-offline`,
