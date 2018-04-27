@@ -8,13 +8,16 @@ import './css/normalize.css'
 import './css/buttons.css'
 import './css/overrides.css'
 
-const Section = styled.section`
+const Wrapper = styled.section`
+  background-color: #fff;
+`
+
+const Content = styled.div`
   display: flex;
   padding: 0 1.45rem;
   max-width: 60rem;
   margin: 0 auto;
   min-height: 30rem;
-  background-color: #fff;
 
   & > div { z-index: 1; }
 
@@ -27,9 +30,11 @@ const Template = props => {
   const { children, location } = props
 
   return (
-    <div id="page">
+    <div id="page" className="stuff">
       <Header path={location.pathname} />
-      <Section>{children()}</Section>
+      <Wrapper>
+        <Content className="content">{children()}</Content>
+      </Wrapper>
       <Footer path={location.pathname} />
     </div>
   )

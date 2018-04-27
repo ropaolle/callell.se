@@ -5,7 +5,7 @@ import Menu from './menu'
 
 import logo from './img/logo-text.svg'
 
-const Container = styled.header`
+const Wrapper = styled.div`
   padding: 1.45rem;
   max-width: 60rem;
   margin: 0 auto;
@@ -14,10 +14,6 @@ const Container = styled.header`
   align-items: center;
 `
 
-/*
-background-color: #3FA9F5;
-    height: 100%;
-*/
 const BottomBorder = styled.div`
   padding: 0 1.45rem;
   display: flex;
@@ -57,27 +53,27 @@ const HamburgerMenu = styled.div`
   }
 `;
 
-const Header = props => (
-  <div>
-    <Container path={props.path === '/'}>
-      <Logo>
+const Header = () => (
+  <header>
+    <Wrapper className="wrapper">
+      <Logo className="logo">
         <Link to="/">
           <img src={logo} alt="Callell.se" />
         </Link>
       </Logo>
       <Menu header />
-      <HamburgerMenu>
+      <HamburgerMenu className="hamburger-menu">
         <span>
           <div />
           <div />
           <div />
         </span>
       </HamburgerMenu>
-    </Container>
-    <BottomBorder>
+    </Wrapper>
+    <BottomBorder className="bottom-border">
       <hr />
     </BottomBorder>
-  </div>
+  </header>
   )
 
 export default Header

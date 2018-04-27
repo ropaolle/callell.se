@@ -5,7 +5,7 @@ import Menu from './menu'
 import logo from './img/logo-text.svg'
 import footer from './img/footer.svg'
 
-const FooterBottom = styled.footer`
+const FooterBottom = styled.div`
   color: #eee;
   background-color: #454545;
   padding: 1.45rem;
@@ -15,7 +15,7 @@ const FooterBottom = styled.footer`
   align-items: center;
 `;
 
-const FooterSecond = styled.footer`
+const FooterSecond = styled.div`
   position: relative;
   background-color: #fff;
   width: 100%;
@@ -55,17 +55,17 @@ const Copyright= styled.div`
 `;
 
 const Footer = () => (
-  <div>
-    <FooterSecond>
+  <footer>
+    <FooterSecond className="second-footer">
       <img src={footer} alt="Callell.se" />
       <Element>First we build the tools, then they build us...</Element>
     </FooterSecond>
-    <FooterBottom>
+    <FooterBottom className="bottom-footer">
       <Logo><img src={logo} alt="Callell.se" /></Logo>
       <Menu position="footer" />
       <Copyright>Callell.se <span role="img" aria-label="copyrigth">©</span> 2018</Copyright>
     </FooterBottom>
-  </div>
+  </footer>
   )
 
 export default Footer

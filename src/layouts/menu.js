@@ -36,7 +36,7 @@ const Menu = (props) => {
   }
 
   return (
-    <StyledMenu>
+    <StyledMenu className="menu" >
       <ul>
         <li><Link to="/">Hem</Link></li>
         <li><Link to="/kontakt">Kontakt</Link></li>
