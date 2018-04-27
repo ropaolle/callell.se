@@ -11,14 +11,16 @@ const Wrapper = styled.section`
   background-color: #fff;
 `
 
-const Content = styled.div`
-  display: flex;
-  padding: 0 1.45rem;
-  max-width: 60rem;
-  margin: 0 auto;
+let Content = styled.div`
+  // display: flex;
+  // padding: 0 1.45rem;
+  // max-width: 60rem;
+  // margin: 0 auto;
   min-height: 30rem;
 
-  & > div { z-index: 1; }
+  & > div {
+    z-index: 1;
+  }
 
   @media (min-width: 62.9rem) {
     padding: 0;
@@ -27,6 +29,15 @@ const Content = styled.div`
 
 const Template = props => {
   const { children, location } = props
+
+  if (location.pathname !== '/') {
+    Content = Content.extend`
+      display: flex;
+      padding: 0 1.45rem;
+      max-width: 60rem;
+      margin: 0 auto;
+    `
+  }
 
   return (
     <div id="page" className="stuff">
