@@ -23,7 +23,7 @@ export default class Contact extends React.Component {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state })
     })
-    .then(() => navigateTo('/thanks/'))
+    .then(() => navigateTo('/tack/'))
     .catch(error => alert(error));
 
     e.preventDefault();
@@ -40,57 +40,37 @@ export default class Contact extends React.Component {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}
+          className="pure-form pure-form-stacked"
         >
-          <p hidden>
-            <label>
-              Don’t fill this out: <input name="bot-field" onChange={this.handleChange} />
-            </label>
-          </p>
-          <p>
-            <label>
-              Your name:<br />
-              <input type="text" name="name" onChange={this.handleChange} />
-            </label>
-          </p>
-          <p>
-            <label>
-              Your email:<br />
-              <input type="email" name="email" onChange={this.handleChange} />
-            </label>
-          </p>
-          <p>
-            <label>
-              Message:<br />
-              <textarea name="message" onChange={this.handleChange} />
-            </label>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-          </p>
-        </form>
-        <form className="pure-form pure-form-stacked">
           <fieldset>
             <legend>A contact form</legend>
 
-            <label htmlFor="email">Email</label>
-            <input id="email" type="email" placeholder="Email" />
+            <div hidden>
+              <input name="bot-field" onChange={this.handleChange} />
+            </div>
+
+            <label htmlFor="name">Name</label>
+            <input name="name" type="text" placeholder="Name" onChange={this.handleChange} />
+
+            <label htmlFor="email">E-post</label>
+            <input name="email" type="email" placeholder="Email" onChange={this.handleChange} />
             <span className="pure-form-message">This is a required field.</span>
 
-            <label htmlFor="password">Password</label>
-            <input id="password" type="password" placeholder="Password" />
-
             <label htmlFor="state">State</label>
-            <select id="state">
+            <select name="state" onChange={this.handleChange} >
               <option>AL</option>
               <option>CA</option>
               <option>IL</option>
             </select>
 
             <label htmlFor="remember" className="pure-checkbox">
-              <input id="remember" type="checkbox" />Remember me
+              <input name="remember" type="checkbox" onChange={this.handleChange} />Remember me
             </label>
 
-            <button type="submit" className="pure-button pure-button-primary">Sign in</button>
+            <label htmlFor="meddelande">Meddelande</label>
+            <textarea name="meddelande"  onChange={this.handleChange} />
+
+            <button type="submit" className="pure-button pure-button-primary">Skicka</button>
           </fieldset>
         </form>
       </div>
