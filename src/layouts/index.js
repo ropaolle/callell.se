@@ -4,9 +4,6 @@ import styled from 'styled-components'
 import Header from './header'
 import Footer from './footer'
 
-// import './css/normalize.css'
-// import './css/buttons.css'
-// import './css/forms.css'
 import './css/pure-min.css'
 import './css/overrides.css'
 
