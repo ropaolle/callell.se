@@ -64,9 +64,7 @@ const Page = () => (
       commodo consequat.
     </p>
 
-    <a href="#nada" className="btn btn-inline btn-success">
-      <span>click me</span>
-    </a>
+    <button className="pure-button pure-button-primary">A Primary Button</button>
   </Article>
 )
 

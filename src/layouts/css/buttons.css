@@ -1,214 +1,128 @@
-/**
- * Obvious Buttons 0.1
- * https://github.com/skidding/obvious-buttons
- *
- * (c) 2014+ Ovidiu Cherecheș
- * http://skidding.mit-license.org
- */
- .btn {
-  display: block;
-  text-align: center;
-  cursor: pointer;
-  border: none;
-  height: 40px;
-  padding: 0 14px;
-  border-radius: 5px;
-  -webkit-box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
-  font-size: 18px;
-  line-height: 37px;
-  -webkit-transition-property: background-color;
-  -webkit-transition-duration: 0.2s;
-  -webkit-transition-timing-function: linear;
-  -moz-transition-property: background-color;
-  -moz-transition-duration: 0.2s;
-  -moz-transition-timing-function: linear;
-  -ms-transition-property: background-color;
-  -ms-transition-duration: 0.2s;
-  -ms-transition-timing-function: linear;
-  -o-transition-property: background-color;
-  -o-transition-duration: 0.2s;
-  -o-transition-timing-function: linear;
-  transition-property: background-color;
-  transition-duration: 0.2s;
-  transition-timing-function: linear;
-  background: #fafafa;
-  color: #222222;
+/*!
+Pure v1.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+.pure-button {
+    /* Structure */
+    display: inline-block;
+    zoom: 1;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    box-sizing: border-box;
 }
-.btn i {
-  line-height: 37px;
+
+/* Firefox: Get rid of the inner focus border */
+.pure-button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
 }
-.btn:active,
-.btn:active i {
-  line-height: 40px;
+
+/* Inherit .pure-g styles */
+.pure-button-group {
+    letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
+    *letter-spacing: normal; /* reset IE < 8 */
+    *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
+    text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
 }
-.btn.btn-primary,
-.btn.btn-info,
-.btn.btn-success,
-.btn.btn-warning,
-.btn.btn-danger,
-.btn.btn-inverse {
-  -webkit-box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.2);
+
+.opera-only :-o-prefocus,
+.pure-button-group {
+    word-spacing: -0.43em;
 }
-.btn:hover,
-.btn:focus {
-  background: #e6e6e6;
-  color: #222222;
+
+.pure-button-group .pure-button {
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
 }
-.btn.btn-primary {
-  background: #0088cc;
-  color: #fafafa;
+
+/*csslint outline-none:false*/
+
+.pure-button {
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0.5em 1em;
+    color: #444; /* rgba not supported (IE 8) */
+    color: rgba(0, 0, 0, 0.80); /* rgba supported */
+    border: 1px solid #999;  /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+    background-color: #E6E6E6;
+    text-decoration: none;
+    border-radius: 2px;
 }
-.btn.btn-primary:hover,
-.btn.btn-primary:focus {
-  background: #006da3;
-  color: #fafafa;
+
+.pure-button-hover,
+.pure-button:hover,
+.pure-button:focus {
+    /* csslint ignore:start */
+    filter: alpha(opacity=90);
+    /* csslint ignore:end */
+    background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
 }
-.btn.btn-info {
-  background: #49afcd;
-  color: #fafafa;
+.pure-button:focus {
+    outline: 0;
 }
-.btn.btn-info:hover,
-.btn.btn-info:focus {
-  background: #339bba;
-  color: #fafafa;
+.pure-button-active,
+.pure-button:active {
+    box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
+    border-color: #000\9;
 }
-.btn.btn-success {
-  background: #5bb75b;
-  color: #fafafa;
+
+.pure-button[disabled],
+.pure-button-disabled,
+.pure-button-disabled:hover,
+.pure-button-disabled:focus,
+.pure-button-disabled:active {
+    border: none;
+    background-image: none;
+    /* csslint ignore:start */
+    filter: alpha(opacity=40);
+    /* csslint ignore:end */
+    opacity: 0.40;
+    cursor: not-allowed;
+    box-shadow: none;
+    pointer-events: none;
 }
-.btn.btn-success:hover,
-.btn.btn-success:focus {
-  background: #47a247;
-  color: #fafafa;
+
+.pure-button-hidden {
+    display: none;
 }
-.btn.btn-warning {
-  background: #faa732;
-  color: #fafafa;
+
+.pure-button-primary,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+    background-color: rgb(0, 120, 231);
+    color: #fff;
 }
-.btn.btn-warning:hover,
-.btn.btn-warning:focus {
-  background: #f9960a;
-  color: #fafafa;
+
+/* Button Groups */
+.pure-button-group .pure-button {
+    margin: 0;
+    border-radius: 0;
+    border-right: 1px solid #111;  /* fallback color for rgba() for IE7/8 */
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+
 }
-.btn.btn-danger {
-  background: #da4f49;
-  color: #fafafa;
+
+.pure-button-group .pure-button:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
 }
-.btn.btn-danger:hover,
-.btn.btn-danger:focus {
-  background: #d0312a;
-  color: #fafafa;
-}
-.btn.btn-inverse {
-  background: #363636;
-  color: #fafafa;
-}
-.btn.btn-inverse:hover,
-.btn.btn-inverse:focus {
-  background: #222222;
-  color: #fafafa;
-}
-.btn span {
-  pointer-events: none;
-}
-.btn:hover {
-  text-decoration: none;
-}
-.btn:focus {
-  text-decoration: none;
-  outline: none;
-}
-.btn:active {
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
-}
-.btn-small {
-  height: 30px;
-  padding: 0 10px;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.15);
-  font-size: 14px;
-  line-height: 28px;
-}
-.btn-small i {
-  line-height: 28px;
-}
-.btn-small:active,
-.btn-small:active i {
-  line-height: 30px;
-}
-.btn-small.btn-primary,
-.btn-small.btn-info,
-.btn-small.btn-success,
-.btn-small.btn-warning,
-.btn-small.btn-danger,
-.btn-small.btn-inverse {
-  -webkit-box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.2);
-}
-.btn-large {
-  height: 50px;
-  padding: 0 18px;
-  border-radius: 6px;
-  -webkit-box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.15);
-  font-size: 22px;
-  line-height: 46px;
-}
-.btn-large i {
-  line-height: 46px;
-}
-.btn-large:active,
-.btn-large:active i {
-  line-height: 50px;
-}
-.btn-large.btn-primary,
-.btn-large.btn-info,
-.btn-large.btn-success,
-.btn-large.btn-warning,
-.btn-large.btn-danger,
-.btn-large.btn-inverse {
-  -webkit-box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2);
-}
-.btn-xlarge {
-  height: 60px;
-  padding: 0 22px;
-  border-radius: 7px;
-  -webkit-box-shadow: inset 0 -5px 0 0 rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: inset 0 -5px 0 0 rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 -5px 0 0 rgba(0, 0, 0, 0.15);
-  font-size: 26px;
-  line-height: 55px;
-}
-.btn-xlarge i {
-  line-height: 55px;
-}
-.btn-xlarge:active,
-.btn-xlarge:active i {
-  line-height: 60px;
-}
-.btn-xlarge.btn-primary,
-.btn-xlarge.btn-info,
-.btn-xlarge.btn-success,
-.btn-xlarge.btn-warning,
-.btn-xlarge.btn-danger,
-.btn-xlarge.btn-inverse {
-  -webkit-box-shadow: inset 0 -5px 0 0 rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: inset 0 -5px 0 0 rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 -5px 0 0 rgba(0, 0, 0, 0.2);
-}
-.btn-inline {
-  display: inline-block;
-  vertical-align: middle;
+.pure-button-group .pure-button:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-right: none;
 }

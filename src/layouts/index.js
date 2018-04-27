@@ -6,6 +6,7 @@ import Footer from './footer'
 
 import './css/normalize.css'
 import './css/buttons.css'
+import './css/forms.css'
 import './css/overrides.css'
 
 const Wrapper = styled.section`
