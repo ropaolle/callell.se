@@ -11,33 +11,20 @@ const Wrapper = styled.section`
   background-color: #fff;
 `
 
-let Content = styled.div`
-  // display: flex;
-  // padding: 0 1.45rem;
-  // max-width: 60rem;
-  // margin: 0 auto;
-  min-height: 30rem;
-
-  & > div {
-    z-index: 1;
-  }
-
-  @media (min-width: 62.9rem) {
-    padding: 0;
-  }
-`
-
 const Template = props => {
   const { children, location } = props
 
-  if (location.pathname !== '/') {
-    Content = Content.extend`
+  const Content = (location.pathname !== '/') ?
+    styled.div`
       display: flex;
       padding: 0 1.45rem;
       max-width: 60rem;
       margin: 0 auto;
     `
-  }
+    :
+    styled.div`
+      background-color: white;
+    `
 
   return (
     <div id="page" className="stuff">
