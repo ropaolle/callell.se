@@ -9,9 +9,6 @@ import './css/overrides.css'
 
 import header from '../layouts/img/header-thin.svg'
 
-const Wrapper = styled.section`
-  /* background-color: #fff; */
-`
 const HeaderImage = styled.div`
   overflow: hidden;
   position: absolute;
@@ -43,7 +40,7 @@ const Template = props => {
     `
     :
     styled.div`
-      background-color: white;
+      /* background-color: white; */
     `
 
   return (
@@ -52,9 +49,7 @@ const Template = props => {
         <img src={header} alt="Callell.se" />
       </HeaderImage>
       <Header path={location.pathname} />
-      <Wrapper>
-        <Content className="content">{children()}</Content>
-      </Wrapper>
+      <Content className="content">{children()}</Content>
       <Footer path={location.pathname} />
     </div>
   )

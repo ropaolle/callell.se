@@ -17,7 +17,6 @@ const FooterBottom = styled.div`
 
 const FooterSecond = styled.div`
   position: relative;
-  background-color: #fff;
   width: 100%;
   line-height: 0;
   img {
