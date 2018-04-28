@@ -16,12 +16,12 @@ const Menu = (props) => {
     li {
       margin: 0;
       padding: 0 0.5rem;
-    }
 
-    a {
-      color: #fff;
-      text-decoration: none;
-      &:hover { color: #ddd; }
+      a {
+        color: #fff;
+        text-decoration: none;
+        &:hover { color: #ddd; }
+      }
     }
   `
 

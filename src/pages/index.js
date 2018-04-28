@@ -35,8 +35,10 @@ const FullWidthOne = FullWidth.extend`
   div {
     justify-content: space-evenly;
     display: flex;
+    flex-wrap: wrap;
     & > article {
-      margin-right: 10px;
+      margin-right: 1.45rem;
+      margin-bottom: 1.45rem;
     }
   }
 `;
@@ -75,6 +77,7 @@ const Article = styled.article`
 const Block = styled.article`
   background-color: #eee;
   min-height: 100px;
+  min-width: 300px;
   flex-grow: 1;
   padding: 10px;
 `;

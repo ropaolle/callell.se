@@ -32,7 +32,7 @@ const Element = styled.div`
   max-width: 50%;
   margin: 0;
   line-height: 1.45em;
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   color: #777;
 
   @media (max-width: 60rem) {

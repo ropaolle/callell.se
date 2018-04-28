@@ -7,9 +7,24 @@ import Footer from './footer'
 import './css/pure-min.css'
 import './css/overrides.css'
 
+import header from '../layouts/img/header-thin.svg'
+
 const Wrapper = styled.section`
-  background-color: #fff;
+  /* background-color: #fff; */
 `
+const HeaderImage = styled.div`
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  img {
+    flex: 0 0 auto;
+    height: 11em;
+    width: auto;
+  }
+`;
 
 const Template = props => {
   const { children, location } = props
@@ -20,6 +35,11 @@ const Template = props => {
       padding: 0 1.45rem;
       max-width: 60rem;
       margin: 0 auto;
+      min-height: 30rem;
+      margin-top: 4rem;
+      @media (min-width: 800px) {
+        margin-top: 7rem;
+      }
     `
     :
     styled.div`
@@ -28,6 +48,9 @@ const Template = props => {
 
   return (
     <div id="page" className="stuff">
+      <HeaderImage>
+        <img src={header} alt="Callell.se" />
+      </HeaderImage>
       <Header path={location.pathname} />
       <Wrapper>
         <Content className="content">{children()}</Content>
