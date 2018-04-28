@@ -2,6 +2,7 @@ import React from 'react' /* eslint-disable-line */
 import styled from 'styled-components'
 
 import header from '../layouts/img/header.svg'
+import appdev from '../layouts/img/app-dev.svg'
 
 const HeaderImage = styled.div`
   overflow: hidden;
@@ -22,11 +23,13 @@ const HeaderImage = styled.div`
 `;
 
 const FullWidth = styled.section`
-  min-height: 450px;
+
   div {
     padding: 1.45rem;
     max-width: 60rem;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
   }
 `;
 
@@ -44,7 +47,7 @@ const FullWidthOne = FullWidth.extend`
 `;
 
 const FullWidthTwo = FullWidth.extend`
-  background-color: #555;
+  background-color: #f5da3f;
   color: #fff;
 `;
 
@@ -52,10 +55,12 @@ const FullWidthThree = FullWidth.extend`
 `;
 
 const Article = styled.article`
-  max-width: 500px;
+  min-width: 300px;
+  max-width: 30rem;
   z-index: 1;
   position: relative;
   color: #444;
+  flex-grow: 1;
 
   h1 {
     font-size: 3.5rem;
@@ -109,19 +114,21 @@ const Page = () => (
         </Article>
       </div>
     </FullWidth>
+
     <FullWidthOne>
       <div>
         <Block>dummy</Block>
         <Block>dummy</Block>
       </div>
     </FullWidthOne>
+
     <FullWidthTwo>
       <div>
-        <Article>
-        dummy
-        </Article>
+        <Article><img src={appdev} alt="Callell.se" /></Article>
+        <Article>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Article>
       </div>
     </FullWidthTwo>
+
     <FullWidthThree>
       <div>
         <Article>
