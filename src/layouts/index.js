@@ -15,7 +15,6 @@ const HeaderImage = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-
   img {
     flex: 0 0 auto;
     height: 11em;
@@ -28,7 +27,6 @@ const Template = props => {
 
   const Content = (location.pathname !== '/') ?
     styled.div`
-      display: flex;
       padding: 0 1.45rem;
       max-width: 60rem;
       margin: 0 auto;

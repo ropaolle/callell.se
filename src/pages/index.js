@@ -23,7 +23,6 @@ const HeaderImage = styled.div`
 `;
 
 const FullWidth = styled.section`
-
   div {
     padding: 1.45rem;
     max-width: 60rem;
