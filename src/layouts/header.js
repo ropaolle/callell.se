@@ -1,10 +1,17 @@
 import React from 'react' /* eslint-disable-line */
 import styled from 'styled-components'
 import Link from 'gatsby-link'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import Menu from './menu'
 
 import header from '../layouts/img/header-thin.svg'
 import logo from './img/logo-text.svg'
+
+const menu = [
+  { url: '/', text: 'Hem', icon: 'home' },
+  { url: '/kontakt', text: 'Kontakt', icon: 'envelope' },
+  { url: '/blogg', text: 'Blogg', icon: 'rss' },
+]
 
 const HeaderImage = styled.div`
   overflow: hidden;
@@ -18,7 +25,7 @@ const HeaderImage = styled.div`
     height: 11em;
     width: auto;
   }
-`;
+`
 
 const Wrapper = styled.div`
   padding: 1.45rem;
@@ -37,7 +44,7 @@ const BottomBorder = styled.div`
   height: 0;
   hr {
     z-index: 2;
-    border: 1px solid #4EB5F4;
+    border: 1px solid #4eb5f4;
     width: 100%;
   }
 `
@@ -46,29 +53,53 @@ const Logo = styled.div`
   z-index: 2;
   width: 200px;
   height: auto;
-`;
+`
 
-const HamburgerMenu = styled.div`
+const StyledMenu = styled(Menu)`
+  z-index: 1;
+
+  a,
+  a:visited {
+    color: #fff;
+    font-size: 1.2em;
+  }
+
+  @media (max-width: 600px) {
+    display: ${props => (props.open ? 'block' : 'none')};
+    position: absolute;
+    right: 1.45rem;
+    background-color: #558fb8;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    flex-direction: column;
+    margin-top: 6.5rem;
+    padding: 0.5rem 0;
+
+    li {
+      padding: 0;
+      a {
+        padding: 0.5rem 1.45rem;
+      }
+      a:hover {
+        background-color: #3fa9f5;
+        color: #fff;
+      }
+    }
+  }
+`
+
+const DropdownMenuBtn = styled.div`
   z-index: 2;
-
-  div {
-    width: 35px;
-    height: 6px;
-    background-color: #f7f7f7;
-    margin: 6px 0;
-    border-radius: 3px;
-  }
-
-  &:hover div{
-    background-color: #ddd;
-  }
+  font-size: 2.5rem;
+  color: #f7f7f7;
 
   @media (min-width: 600px) {
     display: none;
   }
-`;
+`
 
-const Header = () => (
+const Header = props => (
   <header>
     <Wrapper className="wrapper">
       <Logo className="logo">
@@ -76,22 +107,25 @@ const Header = () => (
           <img src={logo} alt="Callell.se" />
         </Link>
       </Logo>
-      <Menu header />
-      <HamburgerMenu className="hamburger-menu">
-        <span>
-          <div />
-          <div />
-          <div />
-        </span>
-      </HamburgerMenu>
+
+      <StyledMenu header menu={menu} open={props.open} />
+
+      <DropdownMenuBtn
+        className="dropdown-menu-btn"
+        onClick={props.handleClick}
+      >
+        <FontAwesomeIcon icon="bars" />
+      </DropdownMenuBtn>
     </Wrapper>
+
     <BottomBorder className="bottom-border">
       <hr />
     </BottomBorder>
+
     <HeaderImage className="header-image">
       <img src={header} alt="Callell.se" />
     </HeaderImage>
   </header>
-  )
+)
 
 export default Header

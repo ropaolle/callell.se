@@ -1,48 +1,55 @@
 import React from 'react' /* eslint-disable-line */
 import styled from 'styled-components'
 
-// import fontawesome from '@fortawesome/fontawesome'
-// // import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-// import brands from '@fortawesome/fontawesome-free-brands/faGithub'
-// import faCheckSquare from '@fortawesome/fontawesome-free-solid/faCheckSquare'
-// import envelopeSquare from '@fortawesome/fontawesome-free-solid/faEnvelopeSquare'
-
 import './css/fontawsome'
 import Header from './header'
-import Footer from './footer'
+import FooterSecond from './footerSecond'
+import FooterMain from './footerMain'
 
 import './css/pure-min.css'
 import './css/overrides.css'
 
-// fontawesome.library.add(faGithub, faCheckSquare, envelopeSquare)
+export default class Template extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { open: false }
+  }
 
-const Template = props => {
-  const { children, location } = props
+  handleClick = () => {
+    this.setState({ open: !this.state.open })
+  }
 
-  const Main = (location.pathname === '/') ?
-    styled.div`
-      /* No styling on the front page */
-    `
-    :
-    styled.div`
-    padding: 0 1.45rem;
-    max-width: 60rem;
-    margin: 0 auto;
-    min-height: 30rem;
-    margin-top: 4rem;
+  render() {
+    const { children, location } = this.props
 
-    @media (min-width: 800px) {
-      margin-top: 7rem;
-    }
-  `
+    const Main =
+      location.pathname === '/'
+        ? styled.div`
+            /* No styling on the front page */
+          `
+        : styled.div`
+            padding: 0 1.45rem;
+            max-width: 60rem;
+            margin: 0 auto;
+            min-height: 30rem;
+            margin-top: 4rem;
 
-  return (
-    <div id="page" className="stuff">
-      <Header path={location.pathname} />
-      <Main className="main">{children()}</Main>
-      <Footer />
-    </div>
-  )
+            @media (min-width: 800px) {
+              margin-top: 7rem;
+            }
+          `
+    return (
+      /* eslint-disable-next-line */
+      <div id="page" className="stuff" onClick={this.handleClick}>
+        <Header
+          path={location.pathname}
+          open={this.state.open}
+          handleClick={this.handleClick}
+        />
+        <Main className="main">{children()}</Main>
+        <FooterSecond />
+        <FooterMain />
+      </div>
+    )
+  }
 }
-
-export default Template
