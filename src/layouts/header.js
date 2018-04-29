@@ -3,7 +3,22 @@ import styled from 'styled-components'
 import Link from 'gatsby-link'
 import Menu from './menu'
 
+import header from '../layouts/img/header-thin.svg'
 import logo from './img/logo-text.svg'
+
+const HeaderImage = styled.div`
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  top: 0;
+  justify-content: center;
+  img {
+    flex: 0 0 auto;
+    height: 11em;
+    width: auto;
+  }
+`;
 
 const Wrapper = styled.div`
   padding: 1.45rem;
@@ -73,6 +88,9 @@ const Header = () => (
     <BottomBorder className="bottom-border">
       <hr />
     </BottomBorder>
+    <HeaderImage className="header-image">
+      <img src={header} alt="Callell.se" />
+    </HeaderImage>
   </header>
   )
 

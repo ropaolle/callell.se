@@ -7,25 +7,10 @@ import Footer from './footer'
 import './css/pure-min.css'
 import './css/overrides.css'
 
-import header from '../layouts/img/header-thin.svg'
-
-const HeaderImage = styled.div`
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  img {
-    flex: 0 0 auto;
-    height: 11em;
-    width: auto;
-  }
-`;
-
 const Template = props => {
   const { children, location } = props
 
-  const Content = (location.pathname !== '/') ?
+  const Main = (location.pathname !== '/') ?
     styled.div`
       padding: 0 1.45rem;
       max-width: 60rem;
@@ -43,11 +28,8 @@ const Template = props => {
 
   return (
     <div id="page" className="stuff">
-      <HeaderImage>
-        <img src={header} alt="Callell.se" />
-      </HeaderImage>
       <Header path={location.pathname} />
-      <Content className="content">{children()}</Content>
+      <Main className="main">{children()}</Main>
       <Footer path={location.pathname} />
     </div>
   )

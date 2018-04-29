@@ -6,12 +6,14 @@ import kontakt from './images/kontakt2.svg'
 
 const Wrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+
   article:first-child {
     margin-right: 1.45rem;
   }
+
   @media (max-width: 800px) {
+    flex-wrap: wrap;
+
     article:first-child {
       margin-right: 0;
       margin-bottom: 1.45rem;
@@ -19,10 +21,14 @@ const Wrapper = styled.div`
   }
 `
 
-const Element = styled.article`
-  min-width: 300px;
-  flex-grow: 1;
-  flex-basis: 0; // Equal width
+const Content = styled.article`
+  flex: 2 1 auto;
+`
+
+const ColumnRight = styled.aside`
+  flex: 1 0 250px;
+  background-color: #f7f7f7;
+  padding: 1em;
 `
 
 const StyledForm = styled.div`
@@ -71,10 +77,12 @@ export default class Contact extends React.Component {
 
   render() {
     return (
-      <Wrapper className="olle">
-        <Element>
+      <Wrapper className="content">
+        <Content>
           <StyledForm>
-            <h1>Kontakt</h1>
+            <h1>
+              <img src={kontakt} alt="Callell.se" /> Kontakt
+            </h1>
             <form
               name="contact"
               method="post"
@@ -117,7 +125,6 @@ export default class Contact extends React.Component {
                   placeholder="E-post"
                   onChange={this.handleChange}
                 />
-                {/* <span className="pure-form-message">This is a required field.</span> */}
 
                 <label htmlFor="state">Ärende</label>
                 <select name="state" onChange={this.handleChange}>
@@ -139,10 +146,15 @@ export default class Contact extends React.Component {
               </fieldset>
             </form>
           </StyledForm>
-        </Element>
-        <Element>
-          <img src={kontakt} alt="Callell.se" />
-        </Element>
+        </Content>
+
+        <ColumnRight>
+          <h3>Min rubrik</h3>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.
+        </ColumnRight>
       </Wrapper>
     )
   }
