@@ -8,7 +8,7 @@ import footer from './img/footer.svg'
 const menu = [
   { url: '/', text: 'Hem', icon: 'home' },
   { url: '/kontakt', text: 'Kontakt', icon: 'envelope' },
-  { url: '/blogg', text: 'Blogg', icon: 'rss' },
+  { url: '/blog', text: 'Blogg', icon: 'rss' },
 ]
 
 const FooterBottom = styled.div`
