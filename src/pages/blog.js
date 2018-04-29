@@ -2,15 +2,11 @@ import React from "react"; /* eslint-disable-line */
 import styled from "styled-components";
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet' /* eslint-disable-line */
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import get from 'lodash/get'
 
 const Container = styled.div`
-  /* margin: 3rem auto;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
+
 `;
 
 const BlogIndex = props => {
@@ -20,7 +16,7 @@ const BlogIndex = props => {
   return (
     <Container>
       <Helmet title={siteTitle} />
-      <h1>Blogg</h1>
+      <h1><FontAwesomeIcon icon="rss" /> Blogg</h1>
 
       {posts.map(({ node }) => {
         const title = get(node, 'frontmatter.title') || node.fields.slug

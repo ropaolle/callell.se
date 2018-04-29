@@ -1,8 +1,7 @@
 import React from 'react' /* eslint-disable-line */
 import { navigateTo } from 'gatsby-link'
 import styled from 'styled-components'
-
-import kontakt from './images/kontakt2.svg'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
 const Wrapper = styled.div`
   display: flex;
@@ -81,7 +80,7 @@ export default class Contact extends React.Component {
         <Content>
           <StyledForm>
             <h1>
-              <img src={kontakt} alt="Callell.se" /> Kontakt
+              <FontAwesomeIcon icon="envelope" /> Kontakt
             </h1>
             <form
               name="contact"
