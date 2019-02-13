@@ -10,7 +10,7 @@ import logo from '../images/logo-text.svg'
 const menu = [
   { url: '/', text: 'Hem', icon: <FaHome /> },
   { url: '/kontakt', text: 'Kontakt', icon: <FaEnvelope /> },
-  { url: '/blog', text: 'Blogg2', icon: <FaRss />},
+  { url: '/blog', text: 'Blogg', icon: <FaRss /> },
 ]
 
 const HeaderImage = styled.div`
@@ -59,7 +59,7 @@ const StyledMenu = styled(Menu)`
   z-index: 1;
 
   svg {
-    vertical-align: text-top;
+    vertical-align: -.125em;
   }
 
   a,
@@ -69,7 +69,7 @@ const StyledMenu = styled(Menu)`
   }
 
   @media (max-width: 600px) {
-    display: ${props => (props.open ? 'block' : 'none')};
+    display: ${ props => (props.open ? 'block' : 'none') };
     position: absolute;
     right: 1.45rem;
     background-color: #558fb8;
@@ -108,7 +108,7 @@ const Header = props => (
     <Wrapper className="wrapper">
       <Logo className="logo">
         <Link to="/">
-          <img src={logo} alt="Callell.se" />
+          <img src={logo} alt="logo" />
         </Link>
       </Logo>
 
@@ -127,7 +127,7 @@ const Header = props => (
     </BottomBorder>
 
     <HeaderImage className="header-image">
-      <img src={header} alt="Callell.se" />
+      <img src={header} alt="header image" />
     </HeaderImage>
   </header>
 )
