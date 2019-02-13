@@ -79,7 +79,7 @@ export default class Contact extends React.Component {
   render () {
     return (
       <Layout>
-        <SEO title="Contact" />
+        <SEO title="Kontakt" />
         <Wrapper className="content">
           <Content>
             <StyledForm>
