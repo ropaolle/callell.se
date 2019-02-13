@@ -44,6 +44,7 @@ export default class Layout extends React.Component {
                     : {
                       margin: `0 auto`,
                       maxWidth: 960,
+                      minHeight: 600,
                       padding: `4rem 1rem 1.5rem`
                     }
                 }
