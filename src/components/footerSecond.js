@@ -1,7 +1,7 @@
-import React from 'react' /* eslint-disable-line */
+import React from 'react'
 import styled from 'styled-components'
 
-import footer from './img/footer.svg'
+import footer from '../images/footer.svg'
 
 const FooterSecond = styled.div`
   position: relative;

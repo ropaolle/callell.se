@@ -1,14 +1,14 @@
-import React from 'react' /* eslint-disable-line */
+import React from 'react'
 import styled from 'styled-components'
+import { FaHome, FaEnvelope, FaRss } from 'react-icons/fa'
 import Menu from './menu'
 
-import logo from './img/logo-text.svg'
-import footer from './img/footer.svg'
+import logo from '../images/logo-text.svg'
 
 const menu = [
-  { url: '/', text: 'Hem', icon: 'home' },
-  { url: '/kontakt', text: 'Kontakt', icon: 'envelope' },
-  { url: '/blog', text: 'Blogg', icon: 'rss' },
+  { url: '/', text: 'Hem', icon: <FaHome /> },
+  { url: '/kontakt', text: 'Kontakt', icon: <FaEnvelope /> },
+  { url: '/blog', text: 'Blogg', icon: <FaRss />},
 ]
 
 const FooterBottom = styled.div`
@@ -29,6 +29,10 @@ const StyledMenu = styled(Menu)`
   a:visited {
     color: #fff;
     font-size: 0.9em;
+  }
+
+  svg {
+    vertical-align: text-top;
   }
 `
 

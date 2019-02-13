@@ -1,16 +1,16 @@
-import React from 'react' /* eslint-disable-line */
+import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import { FaBars, FaHome, FaEnvelope, FaRss } from 'react-icons/fa'
 import Menu from './menu'
 
-import header from '../layouts/img/header-thin.svg'
-import logo from './img/logo-text.svg'
+import header from '../images/header-thin.svg'
+import logo from '../images/logo-text.svg'
 
 const menu = [
-  { url: '/', text: 'Hem', icon: 'home' },
-  { url: '/kontakt', text: 'Kontakt', icon: 'envelope' },
-  { url: '/blog', text: 'Blogg', icon: 'rss' },
+  { url: '/', text: 'Hem', icon: <FaHome /> },
+  { url: '/kontakt', text: 'Kontakt', icon: <FaEnvelope /> },
+  { url: '/blog', text: 'Blogg2', icon: <FaRss />},
 ]
 
 const HeaderImage = styled.div`
@@ -58,6 +58,10 @@ const Logo = styled.div`
 const StyledMenu = styled(Menu)`
   z-index: 1;
 
+  svg {
+    vertical-align: text-top;
+  }
+
   a,
   a:visited {
     color: #fff;
@@ -79,7 +83,7 @@ const StyledMenu = styled(Menu)`
     li {
       padding: 0;
       a {
-        padding: 0.5rem 1.45rem;
+        padding: 0.5rem 1.45rem;       
       }
       a:hover {
         background-color: #3fa9f5;
@@ -114,7 +118,7 @@ const Header = props => (
         className="dropdown-menu-btn"
         onClick={props.handleClick}
       >
-        <FontAwesomeIcon icon="bars" />
+        <FaBars />
       </DropdownMenuBtn>
     </Wrapper>
 

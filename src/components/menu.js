@@ -1,7 +1,6 @@
-import React from 'react' /* eslint-disable-line */
+import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
 const StyledMenu = styled.ul`
   display: flex;
@@ -27,12 +26,13 @@ const Menu = ({ className, menu }) => {
   const menuHtml = menu.map(item => (
     <li>
       <Link to={item.url}>
-        <FontAwesomeIcon icon={item.icon} /> {item.text}
+        {item.icon} {item.text}
       </Link>
     </li>
   ))
 
   return <StyledMenu className={className}>{menuHtml}</StyledMenu>
 }
+
 
 export default Menu
