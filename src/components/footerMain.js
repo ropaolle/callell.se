@@ -8,7 +8,7 @@ import logo from '../images/logo-text.svg'
 const menu = [
   { url: '/', text: 'Hem', icon: <FaHome /> },
   { url: '/kontakt', text: 'Kontakt', icon: <FaEnvelope /> },
-  { url: '/blog', text: 'Blogg', icon: <FaRss />},
+  { url: '/blog', text: 'Blogg', icon: <FaRss /> },
 ]
 
 const FooterBottom = styled.div`
@@ -53,7 +53,7 @@ const Footer = () => (
         <span role="img" aria-label="copyrigth">
           ©
         </span>{' '}
-        2018
+        {new Date().getFullYear()}
       </Copyright>
     </FooterBottom>
   </footer>
