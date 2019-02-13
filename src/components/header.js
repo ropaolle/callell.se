@@ -58,10 +58,6 @@ const Logo = styled.div`
 const StyledMenu = styled(Menu)`
   z-index: 1;
 
-  svg {
-    vertical-align: -.125em;
-  }
-
   a,
   a:visited {
     color: #fff;
