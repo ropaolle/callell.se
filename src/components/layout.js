@@ -9,41 +9,61 @@ import FooterMain from './footerMain'
 import './pure-min.css'
 import './overrides.css'
 
-const Layout = ({ children, frontpage }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
+export default class Layout extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { open: false }
+  }
+
+  handleClick = () => {
+    this.setState({ open: !this.state.open })
+  }
+
+  render () {
+    const { children, frontpage } = this.props
+
+    return (
+      <StaticQuery
+        query={graphql`
+          query SiteTitleQuery {
+            site {
+              siteMetadata {
+                title
+              }
+            }
           }
-        }
-      }
-    `}
-    render={data => {
-      // console.log('F', front)
-      return (
-        <>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <div
-            style={frontpage ? {} : {
-              margin: `0 auto`,
-              maxWidth: 960,
-              padding: `4rem 1rem 1.5rem`
-            }}
-          >
-            <main>{children}</main>
-          </div>
-          <FooterSecond />
-          <FooterMain />
-        </>
-      )
-    }}
-  />
-)
+        `}
+        render={data => {
+          return (
+            <>
+              <Header
+                siteTitle={data.site.siteMetadata.title}
+                open={this.state.open}
+                handleClick={this.handleClick}
+              />
+              <div
+                style={
+                  frontpage
+                    ? {}
+                    : {
+                      margin: `0 auto`,
+                      maxWidth: 960,
+                      padding: `4rem 1rem 1.5rem`
+                    }
+                }
+              >
+                <main>{children}</main>
+              </div>
+              <FooterSecond />
+              <FooterMain />
+            </>
+          )
+        }}
+      />
+    )
+  }
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired
 }
-
-export default Layout
