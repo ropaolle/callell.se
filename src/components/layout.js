@@ -36,11 +36,7 @@ export default class Layout extends React.Component {
         render={data => {
           return (
             <>
-              <Header
-                siteTitle={data.site.siteMetadata.title}
-                open={this.state.open}
-                handleClick={this.handleClick}
-              />
+              <Header open={this.state.open} handleClick={this.handleClick} />
               <div
                 style={
                   frontpage
@@ -55,7 +51,7 @@ export default class Layout extends React.Component {
                 <main>{children}</main>
               </div>
               <FooterSecond />
-              <FooterMain />
+              <FooterMain siteTitle={data.site.siteMetadata.title} />
             </>
           )
         }}

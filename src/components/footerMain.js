@@ -31,7 +31,7 @@ const StyledMenu = styled(Menu)`
   }
 
   svg {
-    vertical-align: text-top;
+    vertical-align: -.125em;
   }
 `
 
@@ -40,15 +40,15 @@ const Copyright = styled.div`
   font-size: 0.8em;
 `
 
-const Footer = () => (
+const Footer = ({ siteTitle }) => (
   <footer>
     <FooterBottom className="bottom-footer">
       <Logo>
-        <img src={logo} alt="Callell.se" />
+        <img src={logo} alt="logo" />
       </Logo>
       <StyledMenu menu={menu} />
       <Copyright>
-        Callell.se{' '}
+        {siteTitle}{' '}
         <span role="img" aria-label="copyrigth">
           ©
         </span>{' '}

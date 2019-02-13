@@ -59,7 +59,7 @@ const StyledMenu = styled(Menu)`
   z-index: 1;
 
   svg {
-    vertical-align: text-top;
+    vertical-align: -.125em;
   }
 
   a,
