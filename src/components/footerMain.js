@@ -29,10 +29,6 @@ const StyledMenu = styled(Menu)`
     color: #fff;
     font-size: 0.9em;
   }
-
-  svg {
-    vertical-align: -.125em;
-  }
 `
 
 const Copyright = styled.div`
