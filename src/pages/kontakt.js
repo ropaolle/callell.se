@@ -27,7 +27,7 @@ const Content = styled.article`
 `
 
 const ColumnRight = styled.aside`
-  flex: 1 0 250px;
+  flex: 1 0 350px;
   background-color: #f7f7f7;
   padding: 1em;
 `
@@ -138,7 +138,7 @@ export default class Contact extends React.Component {
                   </select>
 
                   <label htmlFor="meddelande">Meddelande</label>
-                  <textarea name="meddelande" onChange={this.handleChange} />
+                  <textarea name="meddelande" rows="8" onChange={this.handleChange} />
 
                   <button
                     type="submit"
