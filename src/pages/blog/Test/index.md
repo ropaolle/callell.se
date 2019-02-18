@@ -6,7 +6,7 @@ date: "2015-01-28"
 
 Text som beskriver detta objekt.
 
-```javascript
+```javascript{numberLines: true}
 let obj = {
   a: 1,
   b: 2,
@@ -17,17 +17,22 @@ let obj = {
 
 const {
   a, // assign a to a, e.g. 1
-  // highlight-start
   b: x = 9, // assign b to x, use 9 if b is falsy (b is only used to reach x)
-  // highlight-end
   c: { d } = {}, // d is set to 3 or an empty obj if missing (c only used to reach d)
   ...k
+// highlight-next-line  
 } = // The rest is gathered in k
   obj || {} // If obj is falsy set it to obj
 
 console.log('a', a) // 1
 console.log('x', x) // 2
-// highlight-next-line
 console.log('d', d) // 3
 console.log('k', k) // { e: 4, f: 5 }
+console.log('x', x) // 2
+console.log('d', d) // 3
+console.log('k', k) // { e: 4, f: 5 }
+console.log('x', x) // 2
+console.log('d', d) // 3
+console.log('k', k) // { e: 4, f: 5 }
+
 ```
