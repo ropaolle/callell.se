@@ -134,9 +134,9 @@ const Page = () => (
             webbutveckling och kan starta upp nya projekt med kort varsel.
           </p>
 
-          <button className="pure-button pure-button-primary">
-            Hör gärna av dig
-          </button>
+          <Link to="/kontakt">
+            <button className="pure-button pure-button-primary">Hör gärna av dig</button>
+          </Link>
         </Article>
       </div>
     </SectionOne>
