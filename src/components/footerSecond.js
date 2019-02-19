@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import footer from '../images/footer.svg'
 
 const FooterSecond = styled.div`
+  margin-top: 10px;
   position: relative;
   line-height: 0;
 `

@@ -7,6 +7,8 @@ import SEO from '../components/seo'
 
 import header from '../images/header.svg'
 import appdev from '../images/app-dev.svg'
+import headshot1 from '../images/headshot1.jpg'
+import headshot2 from '../images/headshot2.jpg'
 
 const HeaderImage = styled.div`
   overflow: hidden;
@@ -26,41 +28,41 @@ const HeaderImage = styled.div`
   }
 `
 
-const FullWidth = styled.section`
-  div {
+const Section = styled.section`
+  div.wrapper {
     padding: 1.45rem;
     max-width: 60rem;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
   }
-`
 
-const FullWidthOne = styled(FullWidth)`
-  min-height: 200px;
-  div {
-    justify-content: space-evenly;
-    display: flex;
-    flex-wrap: wrap;
-    & > article {
-      margin-right: 1.45rem;
-      margin-bottom: 1.45rem;
-    }
+  article {
+    flex: 1 1 300px;
   }
 `
 
-const FullWidthTwo = styled(FullWidth)`
-  background-color: #f5da3f;
-  color: #fff;
+const SectionOne = styled(Section)`
+  position: relative; // Visa framför header-bild.
+  article {
+    max-width: 700px;
+  }
+  button {
+    float: right;
+  }
 `
 
-const FullWidthThree = styled(FullWidth)``
+const SectionTwo = styled(Section)`
+  article {
+    padding: 10px;
+  }
+`
+
+const SectionThree = styled(Section)`
+  background-color: #f5da3f;
+`
 
 const Article = styled.article`
-  min-width: 300px;
-  max-width: 30rem;
-  z-index: 1;
-  position: relative;
   color: #444;
   flex-grow: 1;
 
@@ -81,22 +83,43 @@ const Article = styled.article`
     }
   }
 `
-const Block = styled.article`
-  background-color: #eee;
-  min-height: 100px;
-  min-width: 300px;
-  flex-grow: 1;
-  padding: 10px;
+
+const Blocks = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+
+  article {
+    background-color: #eee;
+    margin: 5px 5px 5px 50px;
+
+    img {
+      border-radius: 500px;
+      border: 10px solid #aaa;
+      width: 30%;
+      margin-top: -23px;
+      margin-left: -50px;
+      margin-right: 10px;
+      float: left;
+    }
+
+    i {
+      margin: 12px 0px;
+      display: block;
+    }
+  }
 `
 
 const Page = () => (
   <Layout frontpage>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Home" keywords={[`JavaScript`, `React`, `HTML5`, `CSS`, `GraphQL`, `MongoDB`, `SQL`]} />
+
     <HeaderImage>
       <img src={header} alt="Callell.se" />
     </HeaderImage>
-    <FullWidth>
-      <div>
+
+    <SectionOne>
+      <div class="wrapper">
         <Article>
           <h1>Webbutveckling</h1>
 
@@ -106,45 +129,85 @@ const Page = () => (
           </h2>
 
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            Om du söker en konsult som kan hjälpa till med både större och
+            mindre projekt har du hittat rätt. Vi har en bred erfarenhet av
+            webbutveckling och kan starta upp nya projekt med kort varsel.
           </p>
 
           <button className="pure-button pure-button-primary">
-            A Primary Button
+            Hör gärna av dig
           </button>
         </Article>
       </div>
-    </FullWidth>
+    </SectionOne>
 
-    <FullWidthOne>
-      <div>
-        <Block>dummy</Block>
-        <Block>dummy</Block>
+    <SectionTwo>
+      <div class="wrapper">
+        <h3>Röster från några tidigare uppdrag</h3>
+        <Blocks>
+          <Article>
+            <img src={headshot1} alt="duponts" />
+            På ett mindre företag är det alltid utmanande med
+            personalförändringar. När en av våra utvecklare av en kundlösning vi
+            utvecklat själva slutade behövde vi snabbt få in en ersättare som
+            kunde hantera den befintliga kodbasen.
+            <i>
+              Callell kunde direkt gå in och börja arbeta med det befintliga
+              projektet och hantera kundkritiska buggar samtidigt som de kunde
+              utöka lösningen efter våra önskemål.
+            </i>
+            <div>Lotta Andersson, Innovation officer – Duponta AB</div>
+          </Article>
+
+          <Article>
+            <img src={headshot2} alt="duponts" />
+            <div>
+              I vår bransch är det av yttersta vikt att alltid ge våra kunder
+              ett snabbt och tydligt bemötande, samtidigt som vi behöver full
+              kontroll på kommunikationsflödet. Att hitta en lösning som
+              hanterad våra behov visade sig vara svårare än vi hade förväntat
+              oss.
+            </div>
+            <i>
+              Tillsammans med Callell byggde vi istället en kundanpassad lösning
+              som utför det vi vill, varken mer eller mindre. Slimmat, smidigt
+              och lätt att underhålla.
+            </i>
+            <div>
+              Martin Petersson, Customer interaction manager - Broadcast Telecom
+              AB
+            </div>
+          </Article>
+        </Blocks>
       </div>
-    </FullWidthOne>
+    </SectionTwo>
 
-    <FullWidthTwo>
-      <div>
+    <SectionThree>
+      <div class="wrapper">
         <Article>
           <img src={appdev} alt="Callell.se" />
         </Article>
         <Article>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          <h3>
+            Why millions of developers use javascript for web application
+            development
+          </h3>
+          <blockquote cite="http://www.gutenberg.org/ebooks/1257">
+            Over the past 20 years or so since when JavaScript was released, it
+            has become the most popular programming language for web development
+            today. You can understand the importance of JavaScript as a web
+            development language from the fact that as per the recent reports,
+            JavaScript is currently being used by more than 94 percent of all
+            the websites.
+            <div>
+              <a href="https://torquemag.io/2018/06/why-millions-of-developers-use-javascript-for-web-application-development/">
+                Torquemag.io, June 2018
+              </a>
+            </div>
+          </blockquote>
         </Article>
       </div>
-    </FullWidthTwo>
-
-    <FullWidthThree>
-      <div>
-        <Article>Länk till <Link to="/blog/">Blogg</Link>.</Article>
-      </div>
-    </FullWidthThree>
+    </SectionThree>
   </Layout>
 )
 

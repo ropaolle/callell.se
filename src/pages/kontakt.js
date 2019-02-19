@@ -27,7 +27,7 @@ const Content = styled.article`
 `
 
 const ColumnRight = styled.aside`
-  flex: 1 0 250px;
+  flex: 1 0 350px;
   background-color: #f7f7f7;
   padding: 1em;
 `
@@ -97,8 +97,8 @@ export default class Contact extends React.Component {
               >
                 <fieldset>
                   <legend>
-                  Om du vill veta mer eller kanske rent ut av behöver hjälp med
-                  ett uppdrag är du alltid välkommen att höra av dig.
+                    Om du vill veta mer eller kanske rent ut av behöver hjälp
+                    med ett uppdrag är du alltid välkommen att höra av dig.
                   </legend>
 
                   <div hidden>
@@ -138,13 +138,17 @@ export default class Contact extends React.Component {
                   </select>
 
                   <label htmlFor="meddelande">Meddelande</label>
-                  <textarea name="meddelande" onChange={this.handleChange} />
+                  <textarea
+                    name="meddelande"
+                    rows="8"
+                    onChange={this.handleChange}
+                  />
 
                   <button
                     type="submit"
                     className="pure-button pure-button-primary"
                   >
-                  Skicka
+                    Skicka
                   </button>
                 </fieldset>
               </form>
@@ -152,11 +156,37 @@ export default class Contact extends React.Component {
           </Content>
 
           <ColumnRight>
-            <h3>Min rubrik</h3>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+            <h2>Support</h2>
+            Vid support rekommenderar vi vårt ärendesystem. För att använda det
+            måste Du först registrera ett konto. Därefter kan Du enkelt
+            uppdatera eller skapa nya ärenden genom att helt enkelt E-posta till{' '}
+            <a href="mailto:support@callell.se">support@callell.se</a>.
+            <h3>Registrera ett nytt konto</h3>
+            <ul>
+              <li>
+                Gå till{' '}
+                <a
+                  href="https://support.callell.se/portal/signup"
+                  target="_blank"
+                >
+                  Registrera ett nytt konto
+                </a>{' '}
+                och ange dina användaruppgifter.
+              </li>
+            </ul>
+            Du har nu möjlighet att:
+            <ul>
+              <li>
+                <a href="https://support.callell.se" target="_blank">
+                  Logga in
+                </a>{' '}
+                och visa status och historik för dian ärenden.
+              </li>
+              <li>
+                E-posta ärenden till{' '}
+                <a href="mailto:support@callell.se">support@callell.se</a>.
+              </li>
+            </ul>
           </ColumnRight>
         </Wrapper>
       </Layout>
