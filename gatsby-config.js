@@ -32,18 +32,18 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${ __dirname }/src/pages/blog`,
-        name: 'markdown-pages',
-      },
+        name: 'markdown-pages'
+      }
     },
-
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           'gatsby-remark-prismjs',
-        ],
-      },
-    },
+          'gatsby-remark-picture',
+        ]
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

@@ -1,7 +1,7 @@
 ---
-path: "/blogg/markdown-test"
-title: Markdown test
-date: "2015-05-01"
+path: "/blogg/markdown"
+title: "Markdown test"
+date: "2015-05-11"
 ---
 
 ## TOC
