@@ -112,7 +112,7 @@ const Blocks = styled.div`
 
 const Page = () => (
   <Layout frontpage>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Home" keywords={[`JavaScript`, `React`, `HTML5`, `CSS`, `GraphQL`, `MongoDB`, `SQL`]} />
 
     <HeaderImage>
       <img src={header} alt="Callell.se" />

@@ -18,7 +18,7 @@ export default function Blogs ({
 
   return (
     <Layout>
-      <SEO title="Page two" />
+      <SEO title="Blog" />
       <h1>Blogg</h1>
       <div>{Posts}</div>
 

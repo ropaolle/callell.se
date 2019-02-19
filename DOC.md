@@ -7,7 +7,4 @@ npm run develop (git bash)
 
 ## TODO
 
-- Blogg med markdown.
-- Brödtext till förstasidan.
-- SEO på alla sidor.
-- Lägg till länk plus info om Zend Desk på kontaksidan.
+- ?
