@@ -27,7 +27,7 @@ const Content = styled.article`
 `
 
 const ColumnRight = styled.aside`
-  flex: 1 0 350px;
+  flex: 1 1 350px;
   background-color: #f7f7f7;
   padding: 1em;
 `
