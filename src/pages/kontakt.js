@@ -129,13 +129,13 @@ export default class Contact extends React.Component {
                     onChange={this.handleChange}
                   />
 
-                  <label htmlFor="state">Ärende</label>
+                  {/* <label htmlFor="state">Ärende</label>
                   <select name="state" onChange={this.handleChange}>
                     <option>Underhåll av befintlig kodbas.</option>
                     <option>Hjälp med att bygga tester.</option>
                     <option>Ett generellt utvecklingsprojekt.</option>
                     <option>Övriga ärenden</option>
-                  </select>
+                  </select> */}
 
                   <label htmlFor="meddelande">Meddelande</label>
                   <textarea
