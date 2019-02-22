@@ -60,7 +60,7 @@ a svg, h1 svg {
   vertical-align: -.125em;
 }
 
-aside > h2:first-child{
+h1:first-child, aside > h2:first-child {
   margin-top: 0;
 }
 
@@ -92,6 +92,13 @@ blockquote a {
 
 .blog-post-content img {
   max-width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  h1:first-child {
+    margin: .67em 0;
+  }
 }
 
 /* PrismJS */
