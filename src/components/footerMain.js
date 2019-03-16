@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FaHome, FaEnvelope, FaRss } from 'react-icons/fa'
+import { FaHome, FaEnvelope, FaMedkit, FaRss } from 'react-icons/fa'
 import Menu from './menu'
 import logo from '../images/logo-text.svg'
 
 const menu = [
   { url: '/', text: 'Hem', icon: <FaHome /> },
   { url: '/kontakt', text: 'Kontakt', icon: <FaEnvelope /> },
-  { url: '/blog', text: 'Blogg', icon: <FaRss /> }
+  { url: '/support', text: 'Support', icon: <FaMedkit /> },
+  // { url: '/blog', text: 'Blogg', icon: <FaRss /> }
 ]
 
 const FooterBottom = styled.div`

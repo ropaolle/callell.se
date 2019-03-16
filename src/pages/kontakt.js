@@ -1,7 +1,7 @@
 import React from 'react'
 import { navigateTo } from 'gatsby-link'
 import styled from 'styled-components'
-import { FaEnvelope } from 'react-icons/fa'
+import { FaEnvelope, FaPhone, FaHome, FaMedkit } from 'react-icons/fa'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
@@ -30,6 +30,15 @@ const ColumnRight = styled.aside`
   flex: 1 1 350px;
   background-color: #f7f7f7;
   padding: 1em;
+
+  h3 {
+    margin-bottom: 6px;
+  }
+
+  svg {
+    vertical-align: -3px;
+    margin-right: 8px;
+  }
 `
 
 const StyledForm = styled.div`
@@ -97,8 +106,8 @@ export default class Contact extends React.Component {
               >
                 <fieldset>
                   <legend>
-                    Om du vill veta mer eller kanske rent ut av behöver hjälp
-                    med ett uppdrag är du alltid välkommen att höra av dig.
+                    Om du vill veta mer eller behöver hjälp med ett uppdrag är
+                    du välkommen att höra av dig.
                   </legend>
 
                   <div hidden>
@@ -156,37 +165,34 @@ export default class Contact extends React.Component {
           </Content>
 
           <ColumnRight>
-            <h2>Support</h2>
-            Vid support rekommenderar vi vårt ärendesystem. För att använda det
-            måste Du först registrera ett konto. Därefter kan Du enkelt
-            uppdatera eller skapa nya ärenden genom att helt enkelt E-posta till{' '}
-            <a href="mailto:support@callell.se">support@callell.se</a>.
-            <h3>Registrera ett nytt konto</h3>
-            <ul>
-              <li>
-                Gå till{' '}
-                <a
-                  href="https://support.callell.se/portal/signup"
-                  target="_blank"
-                >
-                  Registrera ett nytt konto
-                </a>{' '}
-                och ange dina användaruppgifter.
-              </li>
-            </ul>
-            Du har nu möjlighet att:
-            <ul>
-              <li>
-                <a href="https://support.callell.se" target="_blank">
-                  Logga in
-                </a>{' '}
-                och visa status och historik för dian ärenden.
-              </li>
-              <li>
-                E-posta ärenden till{' '}
-                <a href="mailto:support@callell.se">support@callell.se</a>.
-              </li>
-            </ul>
+            <h3>Kontaktuppgifter</h3>
+            <div>
+              <FaHome />
+              <a href="https://callell.se">https://callell.se </a>
+            </div>
+            <div>
+              <FaMedkit />
+              <a href="https://support.callell.se" target="_blank">https://support.callell.se </a>
+            </div>
+            <div>
+              <FaEnvelope />
+              <a href="email:kontakt@callell.se">kontakt@callell.se</a>
+            </div>
+            <div>
+              <FaPhone />
+              <a href="tel:08-446 828 22">08-446 828 22</a>
+            </div>
+            <h3>Försäljning/teknik</h3>
+            <div>Olof Sjögren</div>
+            <div><a href="email:olof.sjogren@callell.se">olof.sjogren@callell.se</a></div>
+            <div><a href="tel:08-446 828 22">08-446 828 22</a> </div>
+            <h3>Adress</h3>
+            <div>
+              <strong>Callell.se</strong>
+            </div>
+            <div>Attn: Olof Sjögren</div>
+            <div>Fridshyddevägen 1</div>
+            <div>191 36 SOLLENTUNA</div>
           </ColumnRight>
         </Wrapper>
       </Layout>

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
-import { FaBars, FaHome, FaEnvelope, FaRss } from 'react-icons/fa'
+import { FaBars, FaHome, FaEnvelope, FaMedkit, FaRss } from 'react-icons/fa'
 import Menu from './menu'
 
 import header from '../images/header-thin.svg'
@@ -10,7 +10,8 @@ import logo from '../images/logo-text.svg'
 const menu = [
   { url: '/', text: 'Hem', icon: <FaHome /> },
   { url: '/kontakt', text: 'Kontakt', icon: <FaEnvelope /> },
-  { url: '/blog', text: 'Blogg', icon: <FaRss /> },
+  { url: '/support', text: 'Support', icon: <span style={{ color: '#007f0e;' }}><FaMedkit /></span> },
+  // { url: '/blog', text: 'Blogg', icon: <FaRss /> },
 ]
 
 const HeaderImage = styled.div`
@@ -62,6 +63,9 @@ const StyledMenu = styled(Menu)`
   a:visited {
     color: #fff;
     font-size: 1.2em;
+  }
+  li a:hover {
+    color: #ddd;
   }
 
   @media (max-width: 600px) {

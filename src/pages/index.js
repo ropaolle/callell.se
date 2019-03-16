@@ -53,6 +53,7 @@ const SectionOne = styled(Section)`
 `
 
 const SectionTwo = styled(Section)`
+  margin-bottom: 30px;
   article {
     padding: 10px;
   }
@@ -93,6 +94,10 @@ const Blocks = styled.div`
     background-color: #eee;
     margin: 5px 5px 5px 50px;
 
+    &:first-of-type {
+      margin-right: 50px;
+    }
+
     img {
       border-radius: 500px;
       border: 10px solid #aaa;
@@ -106,6 +111,13 @@ const Blocks = styled.div`
     i {
       margin: 12px 0px;
       display: block;
+    }
+
+    @media (max-width: 600px) {
+      &:first-of-type {
+        margin-right: 5px;
+        margin-bottom: 35px;
+      }
     }
   }
 `
