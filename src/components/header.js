@@ -10,7 +10,7 @@ import logo from '../images/logo-text.svg'
 const menu = [
   { url: '/', text: 'Hem', icon: <FaHome /> },
   { url: '/kontakt', text: 'Kontakt', icon: <FaEnvelope /> },
-  { url: '/support', text: 'Support', icon: <span style={{ color: '#007f0e;' }}><FaMedkit /></span> },
+  { url: '/support', text: 'Support', icon: <span className="support"><FaMedkit /></span> },
   // { url: '/blog', text: 'Blogg', icon: <FaRss /> },
 ]
 
@@ -66,6 +66,10 @@ const StyledMenu = styled(Menu)`
   }
   li a:hover {
     color: #ddd;
+  }
+
+  .support {
+    color: green;
   }
 
   @media (max-width: 600px) {

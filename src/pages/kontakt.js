@@ -176,7 +176,7 @@ export default class Contact extends React.Component {
             </div>
             <div>
               <FaEnvelope />
-              <a href="email:kontakt@callell.se">kontakt@callell.se</a>
+              <a href="mail:kontakt@callell.se">kontakt@callell.se</a>
             </div>
             <div>
               <FaPhone />
