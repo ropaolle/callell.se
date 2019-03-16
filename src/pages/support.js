@@ -107,7 +107,7 @@ export default class Contact extends React.Component {
             </div>
             <div>
               <FaEnvelope />
-              <a href="email:kontakt@callell.se">kontakt@callell.se</a>
+              <a href="mailto:kontakt@callell.se">kontakt@callell.se</a>
             </div>
             <div>
               <FaPhone />
@@ -116,7 +116,7 @@ export default class Contact extends React.Component {
             <h3>Försäljning/teknik</h3>
             <div>Olof Sjögren</div>
             <div>
-              <a href="email:olof.sjogren@callell.se">
+              <a href="mailto:olof.sjogren@callell.se">
                 olof.sjogren@callell.se
               </a>
             </div>

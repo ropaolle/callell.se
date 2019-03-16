@@ -184,7 +184,7 @@ export default class Contact extends React.Component {
             </div>
             <h3>Försäljning/teknik</h3>
             <div>Olof Sjögren</div>
-            <div><a href="email:olof.sjogren@callell.se">olof.sjogren@callell.se</a></div>
+            <div><a href="mailto:olof.sjogren@callell.se">olof.sjogren@callell.se</a></div>
             <div><a href="tel:08-446 828 22">08-446 828 22</a> </div>
             <h3>Adress</h3>
             <div>
